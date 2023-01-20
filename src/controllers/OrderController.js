@@ -6,20 +6,20 @@ module.exports = {
         const {chart, paid, subtotal} = req.body; 
 
         try {
-            const idProducts = chart.map(product=>{
+            let idProducts = chart.map(product=>{
                 return {
                     id: product._id,
                     cant: product.cant
                 }
             });
 
-            const newOrder = new Order({
+            let newOrder = new Order({
                 paid,
                 subtotal,
                 products:idProducts
             });
 
-            const order = await newOrder.save();
+            let order = await newOrder.save();
 
 
             res.status(200).json({
