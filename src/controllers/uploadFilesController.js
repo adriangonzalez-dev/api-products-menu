@@ -23,7 +23,6 @@ module.exports = {
             if(product.img){
             /* //Verificar si existe el archivo imagen
             const pathImage = product.img.split('/')[7].split('.')[0] */
-            
             await cloudinary.uploader.destroy(product.img_public_id)
             }
             //subir con cloudinary

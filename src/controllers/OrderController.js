@@ -21,6 +21,11 @@ module.exports = {
 
             let order = await newOrder.save();
 
+            if(!order){
+                return res.status(400).json({
+                    msg:'Error al guardar la orden'
+                })
+            }
 
             res.status(200).json({
                 status: 200,
