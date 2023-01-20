@@ -48,13 +48,13 @@ class Server {
     }
 
     middlewares() {
-
+        //CORS
+        
         //Lectura y parseo del body
         this.app.use(express.json());
+        this.app.use(cors());
         this.app.use(express.urlencoded({extended:false}))
 
-        //CORS
-        this.app.use(cors());
         
     }
 }

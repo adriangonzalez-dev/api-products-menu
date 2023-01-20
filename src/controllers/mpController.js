@@ -19,7 +19,7 @@ module.exports = {
             let link = await mp(items, 3, 1635)
             console.log(link)
             res.status(200).json({
-                link : JSON.stringify(link.body.init_point)
+                link : link.body.init_point
             })
 
         } catch (error) {
