@@ -2,9 +2,9 @@ const mercadoPago = require('mercadopago');
 
 const credential = process.env.ACCESS_TOKEN_MP;
 let server = process.env.SERVER || 'http://localhost:5000';
-const success = `${server}`; //redirect en caso de exito
-const failure = `${server}`; //en caso de falla
-const pending = `${server}`; //en caso de quedar pendiente
+const success = `${server}/api/orders/feedback`; //redirect en caso de exito
+const failure = `${server}/api/orders/feedback`; //en caso de falla
+const pending = `${server}/api/orders/feedback`; //en caso de quedar pendiente
 
 const mp = async (items,cuotes,shipping) => {
     try {
@@ -33,7 +33,7 @@ const mp = async (items,cuotes,shipping) => {
         let preference = await mercadoPago.preferences.create(config);
         return preference;
     } catch (error) {
-        throw new Error(error)
+        console.log(error)
     }
 }
 

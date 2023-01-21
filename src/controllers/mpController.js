@@ -14,10 +14,9 @@ module.exports = {
             }]
              */
             const {items} = req.body;
-            console.log(req.body)
 
             let link = await mp(items, 3, 1635)
-            console.log(link)
+
             res.status(200).json({
                 link : link.body.init_point
             })
@@ -25,5 +24,8 @@ module.exports = {
         } catch (error) {
             console.log(error)
         }
+    },
+    feedback:(req=request, res=response)=>{
+        console.log(req.query)
     }
 }
