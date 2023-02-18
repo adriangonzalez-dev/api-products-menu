@@ -50,8 +50,7 @@ class Server {
     middlewares() {
         //CORS
         this.app.use(cors({
-            origin:'*',
-            credentials:true,
+            origin:'https://menu-pedidos-agdev.netlify.app',
             optionsSuccessStatus:200
         }));
         
